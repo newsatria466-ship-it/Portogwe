@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-cream: #FEF9EF;
+  --color-dark: #1A1A2E;
+  --color-coral: #FF6B6B;
+  --color-teal: #4ECDC4;
+  --color-yellow: #FFE66D;
+  --color-lavender: #A78BFA;
+  --color-green: #6BCB77;
+  --color-blue: #4D96FF;
+  --color-pink: #FF9ECD;
+  --color-orange: #FFA751;
+
+  --shadow-brutal-sm: 2px 2px 0 #1A1A2E;
+  --shadow-brutal: 4px 4px 0 #1A1A2E;
+  --shadow-brutal-lg: 6px 6px 0 #1A1A2E;
+  --shadow-brutal-xl: 8px 8px 0 #1A1A2E;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-dark);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: var(--color-yellow);
+  color: var(--color-dark);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark);
+  border: 2px solid var(--color-cream);
+  border-radius: 6px;
+}
