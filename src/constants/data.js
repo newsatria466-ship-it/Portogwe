@@ -4,14 +4,10 @@ import {
   MapPin,
   GraduationCap,
   Cpu,
-  Code,
   Database,
-  Globe,
-  Wrench,
   Server,
   MonitorSmartphone,
-  CircuitBoard,
-  Wifi,
+  Award,
 } from "lucide-react";
 import { Github, Linkedin, Instagram } from "../components/ui/Icons";
 
@@ -44,88 +40,80 @@ export const educationData = [
   {
     degree: "Diploma III (D3) Teknik Komputer",
     institution: "Universitas XYZ",
-    period: "2023 – 2026",
-    gpa: "3.75 / 4.00",
+    period: "2024 – 2026",
+    gpa: "3.87 / 4.00",
     description:
       "Fokus pada embedded systems, jaringan komputer, dan pemrograman. Aktif di organisasi dan komunitas teknologi kampus.",
     icon: GraduationCap,
   },
 ];
 
-// ─── Skills ────────────────────────────────────────────────────
-export const skillCategories = [
+// ─── Certifications ────────────────────────────────────────────
+export const certificationsData = [
   {
-    title: "Programming",
-    icon: Code,
-    skills: [
-      { name: "C / C++", level: 80 },
-      { name: "Python", level: 75 },
-      { name: "JavaScript", level: 85 },
-      { name: "PHP", level: 65 },
-    ],
+    name: "Junior Programmer",
+    issuer: "BNSP Indonesia",
+    year: "2026",
+    credentialId: "TIK.002.000042.2026",
+    description: "•	Sertifikasi kompetensi nasional di bidang pemrograman dan pengembangan perangkat lunak, berlaku hingga Januari 2029.",
+    url: "https://drive.google.com/file/d/1uIqB0LrOVyjdruN63trd74zNOL5YQTi6/view?usp=sharing",
+    bg: "bg-coral",
   },
   {
-    title: "Web Development",
-    icon: Globe,
-    skills: [
-      { name: "React.js", level: 80 },
-      { name: "HTML & CSS", level: 90 },
-      { name: "Tailwind CSS", level: 85 },
-      { name: "Node.js", level: 70 },
-    ],
+    name: "Fundamental of Assistant Web Developer — Digital Talent",
+    issuer: "BPSDM KOMDIGI",
+    year: "2026",
+    credentialId: "212128251110-9/DTA/BLSDM.Komdigi/2026",
+    description: "• Pelatihan intensif pengembangan web yang mencakup implementasi antarmuka pengguna (UI), eksekusi kode program, dan pengelolaan struktur proyek.",
+    url: "https://drive.google.com/file/d/1zy3iUxeThttt5MovuY_ahVtScpPK3d2l/view?usp=sharing",
+    bg: "bg-yellow",
   },
   {
-    title: "Embedded & IoT",
-    icon: CircuitBoard,
-    skills: [
-      { name: "Arduino", level: 85 },
-      { name: "ESP32 / ESP8266", level: 80 },
-      { name: "Raspberry Pi", level: 70 },
-      { name: "Sensor Integration", level: 75 },
-    ],
+    name: "Overview of IoT Technologies — Huawei Talent Online",
+    issuer: "Huawei Enterprise Business Group",
+    year: "2025",
+    description: "•	Sertifikasi kompetensi dasar mengenai arsitektur, protokol komunikasi, dan ekosistem teknologi Internet of Things (IoT).",
+    url: "https://drive.google.com/file/d/1D0BXVWf9ePSvDK-hpU8znkd1lCyXa-VI/view?usp=sharing",
+    bg: "bg-lavender",
   },
   {
-    title: "Networking",
-    icon: Wifi,
-    skills: [
-      { name: "TCP/IP", level: 75 },
-      { name: "Cisco (CCNA)", level: 65 },
-      { name: "Mikrotik", level: 70 },
-      { name: "Linux Server", level: 70 },
-    ],
+    name: "AI for Work & Career Readiness with Google AI Products ",
+    issuer: "Hacktiv8 Indonesia",
+    year: "2026",
+    description: "•	Pelatihan pemanfaatan teknologi AI Google untuk meningkatkan efisiensi kerja, produktivitas, dan kesiapan menghadapi dunia kerja.",
+    url: "https://drive.google.com/file/d/1V2jM_LM5mPGiDGnqha0wrw5FT45GrVnt/view?usp=sharing",
+    bg: "bg-teal",
   },
   {
-    title: "Database",
-    icon: Database,
-    skills: [
-      { name: "MySQL", level: 75 },
-      { name: "MongoDB", level: 65 },
-      { name: "Firebase", level: 70 },
-    ],
+    name: "Pola Pikir Digital — Micro Skill DTS",
+    issuer: "BPSDM Komdigi",
+    year: "2026",
+    credentialId: "2299815850-25653/MS/BLSDM.Komdigi/2026",
+    description: "Pelatihan pola pikir digital mencakup pemahaman elemen kunci dan strategi adaptasi teknologi dalam mendukung transformasi digital.",
+    url: "https://drive.google.com/file/d/16iO9WxgKqF6NwdtrSTds_qoXHKqWPZ3g/view?usp=sharing",
+    bg: "bg-pink",
   },
   {
-    title: "Tools & Others",
-    icon: Wrench,
-    skills: [
-      { name: "Git & GitHub", level: 80 },
-      { name: "VS Code", level: 90 },
-      { name: "Figma", level: 60 },
-      { name: "Postman", level: 70 },
-    ],
+    name: "Seminar Pembekalan Persiapan Masuk Dunia Kerja",
+    issuer: "Universitas Harkat Negeri",
+    year: "2026",
+    description: "Peserta seminar (Membangun Kompetensi Mahasiswa Menuju Dunia Industri) untuk persiapan transisi menuju dunia kerja",
+    url: "https://drive.google.com/file/d/170wavdrc89AnfebUMjrx09AxBqxqMtJl/view?usp=sharing",
+    bg: "bg-orange",
   },
 ];
 
 // ─── Projects ──────────────────────────────────────────────────
 export const projectsData = [
   {
-    title: "Smart Home IoT System",
+    title: "Sistem Monitoring PDAM Aquasens",
     description:
-      "Sistem smart home berbasis ESP32 dengan kontrol melalui web dashboard. Mengintegrasikan sensor suhu, kelembapan, dan relay untuk kontrol perangkat rumah.",
-    tech: ["ESP32", "React.js", "Firebase", "MQTT"],
-    category: "IoT",
-    image: null,
-    github: "https://github.com/dwi/smart-home",
-    demo: null,
+      "Sistem monitoring berbasis web untuk PDAM, dilengkapi dengan fitur autentikasi dan pemantauan data secara real-time.",
+    tech: ["PHP", "MySQL", "Bootstrap"],
+    category: "Web",
+    image: "/aquasense.png",
+    github: null,
+    demo: "https://aquasens.wuaze.com/pdam_monitoring/auth/login.php",
     featured: true,
   },
   {

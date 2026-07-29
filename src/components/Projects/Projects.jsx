@@ -47,13 +47,23 @@ const Projects = () => {
                 transition={{ duration: 0.3 }}
                 className="bg-white border-2 border-dark shadow-brutal flex flex-col group hover:-translate-y-2 hover:shadow-brutal-xl transition-all"
               >
-                {/* Image Placeholder (Neo Brutalism Style) */}
-                <div className="h-48 border-b-2 border-dark bg-yellow relative overflow-hidden flex items-center justify-center p-6">
-                  {/* Decorative background pattern */}
-                  <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #1A1A2E 1px, transparent 0)', backgroundSize: '16px 16px' }} />
-                  <h3 className="text-3xl font-black text-center text-dark rotate-[-5deg] bg-white border-2 border-dark px-4 py-2 shadow-brutal-sm z-10">
-                    {project.title.substring(0, 10)}...
-                  </h3>
+                {/* Project Image or Placeholder */}
+                <div className="h-48 border-b-2 border-dark bg-yellow relative overflow-hidden flex items-center justify-center">
+                  {project.image ? (
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <>
+                      {/* Decorative background pattern */}
+                      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #1A1A2E 1px, transparent 0)', backgroundSize: '16px 16px' }} />
+                      <h3 className="text-3xl font-black text-center text-dark rotate-[-5deg] bg-white border-2 border-dark px-4 py-2 shadow-brutal-sm z-10">
+                        {project.title.substring(0, 10)}...
+                      </h3>
+                    </>
+                  )}
                   
                   {project.featured && (
                     <span className="absolute top-4 right-4 bg-coral text-dark border-2 border-dark px-2 py-1 text-xs font-bold font-mono z-20">

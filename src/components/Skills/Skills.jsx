@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { skillCategories } from "../../constants/data";
+import { Award, CheckCircle2 } from "lucide-react";
+import { certificationsData } from "../../constants/data";
 import SectionTitle from "../ui/SectionTitle";
 
 const containerVariants = {
@@ -15,13 +16,11 @@ const itemVariants = {
   visible: { y: 0, opacity: 1 },
 };
 
-const bgColors = ["bg-coral", "bg-teal", "bg-yellow", "bg-pink", "bg-blue", "bg-green"];
-
 const Skills = () => {
   return (
     <section id="skills" className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
-        <SectionTitle title="MY ARSENAL" subtitle="Tools and technologies I use to build things" accent="yellow" />
+        <SectionTitle title="VERIFIED CREDENTIALS." subtitle="Official competencies, licenses, and verified achievements" accent="yellow" />
 
         <motion.div
           variants={containerVariants}
@@ -30,41 +29,34 @@ const Skills = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"
         >
-          {skillCategories.map((cat, idx) => {
-            const Icon = cat.icon;
-            const bgColor = bgColors[idx % bgColors.length];
+          {certificationsData.map((cert, idx) => {
             return (
               <motion.div
                 key={idx}
                 variants={itemVariants}
-                className={`p-6 border-2 border-dark shadow-brutal-lg ${bgColor}`}
+                className={`p-6 border-4 border-black shadow-[6px_6px_0px_0px_#000] ${cert.bg} hover:-translate-y-2 hover:rotate-1 transition-all duration-200 ease-in-out flex flex-col justify-between`}
               >
-                <div className="flex items-center gap-4 mb-6 pb-4 border-b-2 border-dark">
-                  <div className="p-3 bg-white border-2 border-dark rounded-none">
-                    <Icon size={28} />
-                  </div>
-                  <h3 className="text-2xl font-black uppercase">{cat.title}</h3>
-                </div>
-
-                <div className="space-y-4">
-                  {cat.skills.map((skill, sIdx) => (
-                    <div key={sIdx}>
-                      <div className="flex justify-between font-mono font-bold text-sm mb-1">
-                        <span>{skill.name}</span>
-                        <span>{skill.level}%</span>
-                      </div>
-                      <div className="h-4 bg-white border-2 border-dark w-full relative overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 1, ease: "easeOut" }}
-                          className="absolute top-0 left-0 h-full bg-dark"
-                        />
-                      </div>
+                <div>
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="p-3 bg-white border-2 border-black">
+                      <Award size={28} className="text-black" />
                     </div>
-                  ))}
+                    <span className="border-2 border-black bg-white px-3 py-1 rounded-full font-bold text-sm">
+                      {cert.year}
+                    </span>
+                  </div>
+                  <h3 className="text-xl lg:text-2xl font-black uppercase tracking-tight mb-2">{cert.name}</h3>
+                  <div className="flex items-center gap-2 mb-4">
+                    <CheckCircle2 size={16} className="text-black shrink-0" />
+                    <p className="font-bold text-sm uppercase">{cert.issuer}</p>
+                  </div>
+                  <p className="font-mono text-sm text-black/80 font-medium">{cert.description}</p>
+                  <p className="font-mono text-xs mt-2 font-bold bg-white/50 inline-block px-2 py-1 border border-black">ID: {cert.credentialId}</p>
                 </div>
+                
+                <a href={cert.url} target="_blank" rel="noopener noreferrer" className="block w-full mt-6 text-center py-3 border-2 border-black bg-white font-black uppercase hover:bg-black hover:text-white transition-colors">
+                  View Certificate ↗
+                </a>
               </motion.div>
             );
           })}
