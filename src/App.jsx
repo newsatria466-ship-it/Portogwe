@@ -11,7 +11,7 @@ import {
 
 function App() {
   return (
-    <div className="min-h-screen bg-cream text-dark selection:bg-yellow selection:text-dark">
+    <div className="min-h-screen bg-cream text-dark selection:bg-yellow selection:text-dark overflow-x-hidden">
       <Navbar />
       <main>
         <Hero />

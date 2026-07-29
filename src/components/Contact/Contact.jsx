@@ -21,17 +21,17 @@ const Contact = () => {
               </p>
               
               <div className="space-y-6">
-                <div className="flex items-center gap-4 text-xl font-bold border-2 border-dark p-4 bg-teal">
-                  <span className="bg-white p-2 border-2 border-dark">📧</span>
-                  {contactInfo.email}
+                <div className="flex items-center gap-3 sm:gap-4 text-base sm:text-xl font-bold border-2 border-dark p-3 sm:p-4 bg-teal overflow-hidden">
+                  <span className="bg-white p-2 border-2 border-dark shrink-0">📧</span>
+                  <span className="truncate" title={contactInfo.email}>{contactInfo.email}</span>
                 </div>
-                <div className="flex items-center gap-4 text-xl font-bold border-2 border-dark p-4 bg-pink">
-                  <span className="bg-white p-2 border-2 border-dark">📱</span>
-                  {contactInfo.phone}
+                <div className="flex items-center gap-3 sm:gap-4 text-base sm:text-xl font-bold border-2 border-dark p-3 sm:p-4 bg-pink overflow-hidden">
+                  <span className="bg-white p-2 border-2 border-dark shrink-0">📱</span>
+                  <span className="truncate">{contactInfo.phone}</span>
                 </div>
-                <div className="flex items-center gap-4 text-xl font-bold border-2 border-dark p-4 bg-lavender">
-                  <span className="bg-white p-2 border-2 border-dark">📍</span>
-                  {contactInfo.location}
+                <div className="flex items-center gap-3 sm:gap-4 text-base sm:text-xl font-bold border-2 border-dark p-3 sm:p-4 bg-lavender overflow-hidden">
+                  <span className="bg-white p-2 border-2 border-dark shrink-0">📍</span>
+                  <span className="truncate">{contactInfo.location}</span>
                 </div>
               </div>
             </div>

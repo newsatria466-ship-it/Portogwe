@@ -51,7 +51,7 @@ const Skills = () => {
                     <p className="font-bold text-sm uppercase">{cert.issuer}</p>
                   </div>
                   <p className="font-mono text-sm text-black/80 font-medium">{cert.description}</p>
-                  <p className="font-mono text-xs mt-2 font-bold bg-white/50 inline-block px-2 py-1 border border-black">ID: {cert.credentialId}</p>
+                  <p className="font-mono text-xs mt-2 font-bold bg-white/50 inline-block px-2 py-1 border border-black break-all">ID: {cert.credentialId}</p>
                 </div>
                 
                 <a href={cert.url} target="_blank" rel="noopener noreferrer" className="block w-full mt-6 text-center py-3 border-2 border-black bg-white font-black uppercase hover:bg-black hover:text-white transition-colors">
