@@ -31,7 +31,7 @@ export const aboutData = {
     { label: "Projects Completed", value: "10+" },
     { label: "Technologies Used", value: "15+" },
     { label: "Semester", value: "5" },
-    { label: "Certifications", value: "3+" },
+    { label: "Certifications", value: "6+" },
   ],
 };
 
@@ -39,8 +39,8 @@ export const aboutData = {
 export const educationData = [
   {
     degree: "Diploma III (D3) Teknik Komputer",
-    institution: "Universitas XYZ",
-    period: "2024 – 2026",
+    institution: "Universitas Harkat Negeri",
+    period: "2024 – Now",
     gpa: "3.87 / 4.00",
     description:
       "Fokus pada embedded systems, jaringan komputer, dan pemrograman. Aktif di organisasi dan komunitas teknologi kampus.",
@@ -213,8 +213,8 @@ export const experienceData = [
 
 // ─── Contact ───────────────────────────────────────────────────
 export const contactInfo = {
-  email: "dwi@email.com",
-  phone: "+62 812-xxxx-xxxx",
+  email: "newsatria466@gmail.com",
+  phone: "+62 898-8140-702",
   location: "Indonesia",
   socials: [
     {
@@ -224,7 +224,7 @@ export const contactInfo = {
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/dwi",
+      url: "https://www.linkedin.com/in/dwi-satria-21340b3a1",
       icon: Linkedin,
     },
     {
@@ -234,7 +234,7 @@ export const contactInfo = {
     },
     {
       name: "Email",
-      url: "mailto:dwi@email.com",
+      url: "mailto:newsatria466@gmail.com",
       icon: Mail,
     },
   ],
