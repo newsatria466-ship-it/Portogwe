@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { personalInfo } from "../../constants/data";
+import { personalInfo, contactInfo } from "../../constants/data";
 import { Mail } from "lucide-react";
 import { Github, Linkedin } from "../ui/Icons";
 
@@ -72,13 +72,13 @@ const Hero = () => {
             SEE MY WORK
           </a>
           <div className="flex gap-4">
-            <a href="https://github.com/dwi" target="_blank" rel="noreferrer" className="p-3 bg-white border-2 border-dark shadow-brutal-sm hover:bg-yellow transition-colors">
+            <a href={contactInfo.socials.find(s => s.name === "GitHub")?.url} target="_blank" rel="noreferrer" className="p-3 bg-white border-2 border-dark shadow-brutal-sm hover:bg-yellow transition-colors">
               <Github size={28} />
             </a>
-            <a href="https://linkedin.com/in/dwi" target="_blank" rel="noreferrer" className="p-3 bg-white border-2 border-dark shadow-brutal-sm hover:bg-blue transition-colors">
+            <a href={contactInfo.socials.find(s => s.name === "LinkedIn")?.url} target="_blank" rel="noreferrer" className="p-3 bg-white border-2 border-dark shadow-brutal-sm hover:bg-blue transition-colors">
               <Linkedin size={28} />
             </a>
-            <a href="mailto:dwi@email.com" className="p-3 bg-white border-2 border-dark shadow-brutal-sm hover:bg-teal transition-colors">
+            <a href={contactInfo.socials.find(s => s.name === "Email")?.url} className="p-3 bg-white border-2 border-dark shadow-brutal-sm hover:bg-teal transition-colors">
               <Mail size={28} />
             </a>
           </div>

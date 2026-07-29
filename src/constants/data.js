@@ -219,12 +219,12 @@ export const contactInfo = {
   socials: [
     {
       name: "GitHub",
-      url: "https://github.com/dwi",
+      url: "https://github.com/newsatria466-ship-it",
       icon: Github,
     },
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/dwi-satria-21340b3a1",
+      url: "https://www.linkedin.com/in/dwi-satria-21340b3a1?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       icon: Linkedin,
     },
     {
