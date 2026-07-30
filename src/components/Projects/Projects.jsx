@@ -7,6 +7,7 @@ import { Github } from "../ui/Icons";
 
 const Projects = () => {
   const [filter, setFilter] = useState("All");
+  const [showAllMobile, setShowAllMobile] = useState(false);
 
   const filteredProjects = projectsData.filter(
     (project) => filter === "All" || (Array.isArray(project.category) ? project.category.includes(filter) : project.category === filter)
@@ -22,7 +23,10 @@ const Projects = () => {
           {projectCategories.map((cat, idx) => (
             <button
               key={idx}
-              onClick={() => setFilter(cat)}
+              onClick={() => {
+                setFilter(cat);
+                setShowAllMobile(false);
+              }}
               className={`px-6 py-2 border-2 border-dark font-bold font-mono transition-all ${
                 filter === cat
                   ? "bg-dark text-white shadow-none translate-y-[2px] translate-x-[2px]"
@@ -45,7 +49,7 @@ const Projects = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white border-2 border-dark shadow-brutal flex flex-col group hover:-translate-y-2 hover:shadow-brutal-xl transition-all"
+                className={`bg-white border-2 border-dark shadow-brutal flex-col group hover:-translate-y-2 hover:shadow-brutal-xl transition-all ${idx >= 3 && !showAllMobile ? 'hidden md:flex' : 'flex'}`}
               >
                 {/* Project Image or Placeholder */}
                 <div className="h-48 border-b-2 border-dark bg-yellow relative overflow-hidden flex items-center justify-center">
@@ -119,6 +123,17 @@ const Projects = () => {
             ))}
           </AnimatePresence>
         </motion.div>
+        
+        {filteredProjects.length > 3 && !showAllMobile && (
+          <div className="md:hidden flex justify-center mt-10">
+            <button
+              onClick={() => setShowAllMobile(true)}
+              className="px-8 py-3 bg-white text-dark border-4 border-dark font-black uppercase shadow-[6px_6px_0px_0px_#1A1A2E] hover:translate-y-1 hover:translate-x-1 hover:shadow-none transition-all"
+            >
+              Lihat Lainnya
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

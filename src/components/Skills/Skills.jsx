@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Award, CheckCircle2 } from "lucide-react";
 import { certificationsData } from "../../constants/data";
@@ -17,6 +18,8 @@ const itemVariants = {
 };
 
 const Skills = () => {
+  const [showAllMobile, setShowAllMobile] = useState(false);
+
   return (
     <section id="skills" className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
@@ -34,7 +37,7 @@ const Skills = () => {
               <motion.div
                 key={idx}
                 variants={itemVariants}
-                className={`p-6 border-4 border-black shadow-[6px_6px_0px_0px_#000] ${cert.bg} hover:-translate-y-2 hover:rotate-1 transition-all duration-200 ease-in-out flex flex-col justify-between`}
+                className={`p-6 border-4 border-black shadow-[6px_6px_0px_0px_#000] ${cert.bg} hover:-translate-y-2 hover:rotate-1 transition-all duration-200 ease-in-out flex-col justify-between ${idx >= 2 && !showAllMobile ? 'hidden md:flex' : 'flex'}`}
               >
                 <div>
                   <div className="flex items-start justify-between mb-6">
@@ -61,6 +64,17 @@ const Skills = () => {
             );
           })}
         </motion.div>
+        
+        {certificationsData.length > 2 && !showAllMobile && (
+          <div className="md:hidden flex justify-center mt-10">
+            <button
+              onClick={() => setShowAllMobile(true)}
+              className="px-8 py-3 bg-white text-black border-4 border-black font-black uppercase shadow-[6px_6px_0px_0px_#000] hover:translate-y-1 hover:translate-x-1 hover:shadow-none transition-all"
+            >
+              Lihat Lainnya
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
