@@ -9,7 +9,7 @@ const Projects = () => {
   const [filter, setFilter] = useState("All");
 
   const filteredProjects = projectsData.filter(
-    (project) => filter === "All" || project.category === filter
+    (project) => filter === "All" || (Array.isArray(project.category) ? project.category.includes(filter) : project.category === filter)
   );
 
   return (
@@ -76,7 +76,7 @@ const Projects = () => {
                   <div className="flex justify-between items-start mb-4">
                     <h4 className="text-xl font-black leading-tight">{project.title}</h4>
                     <span className="bg-teal border border-dark px-2 text-xs font-bold font-mono flex-shrink-0">
-                      {project.category}
+                      {Array.isArray(project.category) ? project.category.join(", ") : project.category}
                     </span>
                   </div>
                   

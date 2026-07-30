@@ -3,80 +3,61 @@ import { contactInfo } from "../../constants/data";
 import SectionTitle from "../ui/SectionTitle";
 
 const Contact = () => {
+  const whatsappNumber = contactInfo.phone.replace(/[-+ ]/g, "");
+  const whatsappLink = `https://wa.me/${whatsappNumber}`;
+  const emailLink = `mailto:${contactInfo.email}`;
+  const linkedinInfo = contactInfo.socials.find(s => s.name === "LinkedIn");
+  const linkedinLink = linkedinInfo ? linkedinInfo.url : "#";
+
   return (
     <section id="contact" className="py-24 px-6 border-y-2 border-dark bg-yellow/20">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <SectionTitle title="GET IN TOUCH" subtitle="Let's build something awesome together" accent="yellow" />
 
-        <div className="grid md:grid-cols-2 gap-12 mt-12">
+        <div className="mt-12 max-w-2xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white p-8 border-2 border-dark shadow-brutal-lg h-full flex flex-col justify-center">
-              <h3 className="text-4xl font-black mb-6">LET'S TALK!</h3>
-              <p className="text-lg font-medium text-dark/80 mb-8">
-                I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            <div className="bg-white p-8 sm:p-12 border-2 border-dark shadow-brutal-lg flex flex-col justify-center text-center">
+              <h3 className="text-4xl font-black mb-4 uppercase">LET'S TALK!</h3>
+              <p className="text-lg font-medium text-dark/80 mb-10">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out to me via any of these platforms!
               </p>
               
-              <div className="space-y-6">
-                <div className="flex items-center gap-3 sm:gap-4 text-base sm:text-xl font-bold border-2 border-dark p-3 sm:p-4 bg-teal overflow-hidden">
-                  <span className="bg-white p-2 border-2 border-dark shrink-0">📧</span>
-                  <span className="truncate" title={contactInfo.email}>{contactInfo.email}</span>
-                </div>
-                <div className="flex items-center gap-3 sm:gap-4 text-base sm:text-xl font-bold border-2 border-dark p-3 sm:p-4 bg-pink overflow-hidden">
-                  <span className="bg-white p-2 border-2 border-dark shrink-0">📱</span>
-                  <span className="truncate">{contactInfo.phone}</span>
-                </div>
-                <div className="flex items-center gap-3 sm:gap-4 text-base sm:text-xl font-bold border-2 border-dark p-3 sm:p-4 bg-lavender overflow-hidden">
-                  <span className="bg-white p-2 border-2 border-dark shrink-0">📍</span>
-                  <span className="truncate">{contactInfo.location}</span>
-                </div>
+              <div className="grid gap-6">
+                <a 
+                  href={emailLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center gap-4 text-lg sm:text-xl font-bold border-2 border-dark p-4 bg-teal hover:-translate-y-1 hover:shadow-brutal transition-all group"
+                >
+                  <span className="bg-white p-2 border-2 border-dark shrink-0 text-2xl group-hover:scale-110 transition-transform">📧</span>
+                  <span className="truncate">Email Me</span>
+                </a>
+                
+                <a 
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center gap-4 text-lg sm:text-xl font-bold border-2 border-dark p-4 bg-pink hover:-translate-y-1 hover:shadow-brutal transition-all group"
+                >
+                  <span className="bg-white p-2 border-2 border-dark shrink-0 text-2xl group-hover:scale-110 transition-transform">💬</span>
+                  <span className="truncate">WhatsApp</span>
+                </a>
+
+                <a 
+                  href={linkedinLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center gap-4 text-lg sm:text-xl font-bold border-2 border-dark p-4 bg-lavender hover:-translate-y-1 hover:shadow-brutal transition-all group"
+                >
+                  <span className="bg-white p-2 border-2 border-dark shrink-0 text-2xl group-hover:scale-110 transition-transform">💼</span>
+                  <span className="truncate">LinkedIn</span>
+                </a>
               </div>
             </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <form className="bg-white p-8 border-2 border-dark shadow-brutal-lg space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-bold font-mono mb-2 uppercase">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="John Doe"
-                  className="w-full p-4 border-2 border-dark bg-cream focus:bg-white focus:outline-none focus:ring-4 focus:ring-coral/20 transition-all font-medium"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-bold font-mono mb-2 uppercase">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="john@example.com"
-                  className="w-full p-4 border-2 border-dark bg-cream focus:bg-white focus:outline-none focus:ring-4 focus:ring-coral/20 transition-all font-medium"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-bold font-mono mb-2 uppercase">Message</label>
-                <textarea
-                  id="message"
-                  rows="4"
-                  placeholder="Hello, I'd like to talk about..."
-                  className="w-full p-4 border-2 border-dark bg-cream focus:bg-white focus:outline-none focus:ring-4 focus:ring-coral/20 transition-all font-medium resize-none"
-                ></textarea>
-              </div>
-              <button
-                type="button"
-                className="w-full py-4 bg-coral text-dark font-black text-xl border-2 border-dark shadow-brutal hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none transition-all"
-              >
-                SEND MESSAGE
-              </button>
-            </form>
           </motion.div>
         </div>
       </div>

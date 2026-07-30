@@ -106,14 +106,14 @@ export const certificationsData = [
 // ─── Projects ──────────────────────────────────────────────────
 export const projectsData = [
   {
-    title: "Sistem Monitoring PDAM Aquasens",
+    title: "E-Commerce Web",
     description:
-      "Sistem monitoring berbasis web untuk PDAM, dilengkapi dengan fitur autentikasi dan pemantauan data secara real-time.",
+      "Website e-commerce dengan fitur belanja lengkap, terinspirasi dari platform marketplace modern.",
     tech: ["PHP", "MySQL", "Bootstrap"],
     category: "Web",
-    image: "/aquasense.png",
+    image: "/ecomers.png",
     github: null,
-    demo: "https://w-dwi.wuaze.com/pdam_monitoring/auth/login.php",
+    demo: "https://w-dwi.wuaze.com/harkat-login/",
     featured: true,
   },
   {
@@ -128,6 +128,28 @@ export const projectsData = [
     featured: true,
   },
   {
+    title: "Sistem Monitoring PDAM Aquasens",
+    description:
+      "Sistem monitoring berbasis web untuk PDAM, dilengkapi dengan fitur autentikasi dan pemantauan data secara real-time.",
+    tech: ["PHP", "MySQL", "Bootstrap"],
+    category: ["Web", "IoT"],
+    image: "/aquasense.png",
+    github: null,
+    demo: "https://w-dwi.wuaze.com/pdam_monitoring/auth/login.php",
+    featured: true,
+  },
+  {
+    title: "Flappy Birds",
+    description:
+      "Game Flappy Birds interaktif berbasis web yang menyenangkan, dibuat untuk melatih logika pemrograman game.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    category: "Game",
+    image: "/flappybird.png",
+    github: null,
+    demo: "https://flappybirds-iota.vercel.app/",
+    featured: true,
+  },
+  {
     title: "Smart Monitoring ESP32 DHT",
     description:
       "Sistem pemantauan cerdas menggunakan mikrokontroler ESP32 dan sensor DHT untuk memonitor suhu dan kelembaban.",
@@ -138,15 +160,26 @@ export const projectsData = [
     demo: "https://w-dwi.wuaze.com/ESP32_dht-main/",
     featured: true,
   },
+  {
+    title: "Spongebob Labirin",
+    description:
+      "Game petualangan labirin bertema Spongebob yang menantang dan seru untuk dimainkan.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    category: "Game",
+    image: "/spongebob.png",
+    github: null,
+    demo: "https://spongebob-labirin.vercel.app/",
+    featured: true,
+  },
 ];
 
-export const projectCategories = ["All", "IoT", "Web", "Embedded"];
+export const projectCategories = ["All", "Web", "IoT", "Game"];
 
 // ─── Experience ────────────────────────────────────────────────
 export const experienceData = [
   {
     role: "IoT Lab Assistant",
-    company: "Universitas XYZ",
+    company: "Universitas Harkat Negeri",
     period: "Sep 2024 – Sekarang",
     description: [
       "Membimbing mahasiswa dalam praktikum mikrokontroler dan IoT.",
@@ -157,7 +190,7 @@ export const experienceData = [
   },
   {
     role: "Web Developer Intern",
-    company: "PT. Tech Solutions",
+    company: "Cazh.co.id",
     period: "Jun 2025 – Agt 2025",
     description: [
       "Mengembangkan fitur front-end menggunakan React.js.",
