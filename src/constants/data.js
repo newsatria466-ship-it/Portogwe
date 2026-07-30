@@ -229,7 +229,7 @@ export const contactInfo = {
     },
     {
       name: "Instagram",
-      url: "https://instagram.com/dwi",
+      url: "https://www.instagram.com/thv?igsh=MWI4bHIwajgyb2loNQ==",
       icon: Instagram,
     },
     {
