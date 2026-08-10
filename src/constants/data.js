@@ -41,7 +41,7 @@ export const educationData = [
     degree: "Diploma III (D3) Teknik Komputer",
     institution: "Universitas Harkat Negeri",
     period: "2024 – Now",
-    gpa: "3.74 / 4.00",
+    gpa: "3.7 / 4.00",
     description:
       "Fokus pada embedded systems, jaringan komputer, dan pemrograman. Aktif di organisasi dan komunitas teknologi kampus.",
     icon: GraduationCap,
